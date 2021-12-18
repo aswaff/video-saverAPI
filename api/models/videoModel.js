@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 
 
 var TaskSchema = new Schema({
-  name: {
-    type: String,
-    required: 'Please enter the name'
-  },
   URL: {
+    type: String,
+    required: 'Please enter the URL'
+  },
+  HTML: {
     type: String,
     required: 'Please enter the URL'
   },
