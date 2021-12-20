@@ -8,9 +8,17 @@ var TaskSchema = new Schema({
     type: String,
     required: 'Please enter the URL'
   },
+  URLembed: {
+    type: String,
+    required: 'Please enter the embedURL'
+  },
   HTML: {
     type: String,
-    required: 'Please enter the URL'
+    required: 'Please enter the HTML'
+  },
+  Thumbnail: {
+    type: String,
+    required: 'Please enter the Thumbnail'
   },
   Created_date: {
     type: Date,
