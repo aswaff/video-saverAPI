@@ -12,6 +12,15 @@ exports.list_all_tasks = function(req, res) {
   });
 };
 
+exports.search_all_videos = function(req,res){
+  
+      Task.find(req.query)
+         .then(ebooks => res.json(ebooks))
+         .catch(err => res.status(404).json({ success: false }));
+      };
+
+
+
 
 
 

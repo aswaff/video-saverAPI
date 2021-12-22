@@ -25,11 +25,8 @@ var TaskSchema = new Schema({
     default: Date.now
   },
   Category: {
-    type: [{
-      type: String,
-      enum: ['Cute', 'Music', 'Other']
-    }],
-    default: ['Other']
+    type: String,
+    required: 'Please enter the Thumbnail'
   }
 });
 
