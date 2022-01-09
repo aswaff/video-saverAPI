@@ -2,10 +2,11 @@
 
 
 var mongoose = require('mongoose'),
-  Task = mongoose.model('Tasks');
+  Task = mongoose.model('videos');
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
+    console.log(task)
     if (err)
       res.send(err);
     res.json(task);

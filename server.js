@@ -7,7 +7,20 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/videodb'); 
+
+// Connecting to the config Vars in Heroku
+const url = process.env.MONGODB_CONNECT;
+
+
+
+// For a local database connection: mongoose.connect('mongodb://localhost/videodb'); 
+mongoose.connect(url);
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
+});
 
 const cors = require('cors');
 app.use(cors({
@@ -27,4 +40,4 @@ routes(app); //register the route
 app.listen(port);
 
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('Video RESTful API server started on: ' + port);
